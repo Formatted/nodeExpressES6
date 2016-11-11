@@ -1,10 +1,17 @@
-import http from 'http';
+const express = require('express');
+const bodyParser = require('body-parser');
 
+const app = express();
 const PORT = process.env.PORT || 8080;
 
-http.createServer((req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello World\n');
-}).listen(PORT, '127.0.0.1');
+app.set('port', PORT);
+app.use(express.static(`${__dirname}/app/`));
+app.use(bodyParser.json());
 
-console.log('Server running at http://127.0.0.1: ', PORT);
+app.get('/', (req, res) => {
+  res.send('index');
+});
+
+app.listen(app.get('port'));
+
+console.log('Server running at http://127.0.0.1:', PORT);

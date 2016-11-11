@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/Formatted/nodeExpressES6#readme",
   "dependencies": {
-    "babel-eslint": "^7.1.0"
+    "babel-eslint": "^7.1.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
